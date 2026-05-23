@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --background: 249 249 255; /* #f9f9ff */
+  --on-background: 17 28 45; /* #111c2d */
+  --primary: 0 88 190; /* #0058be */
+  --on-primary: 255 255 255; /* #ffffff */
+  --secondary: 80 95 118; /* #505f76 */
+  --surface: 249 249 255; /* #f9f9ff */
+  --surface-container-low: 240 243 255; /* #f0f3ff */
+  --surface-container-high: 222 232 255; /* #dee8ff */
+  --outline: 114 119 133; /* #727785 */
+  --outline-variant: 194 198 214; /* #c2c6d6 */
+  --primary-fixed-dim: 173 198 255; /* #adc6ff */
+  --secondary-fixed-dim: 183 200 225; /* #b7c8e1 */
+  --on-secondary-fixed-variant: 56 72 93; /* #38485d */
+}
+
+.dark {
+  color-scheme: dark;
+  --background: 6 14 32; /* #060e20 */
+  --on-background: 255 255 255; /* #ffffff */
+  --primary: 59 130 246; /* #3b82f6 */
+  --on-primary: 255 255 255; /* #ffffff */
+  --secondary: 156 163 175; /* #9ca3af */
+  --surface: 11 19 38; /* #0b1326 */
+  --surface-container-low: 19 27 46; /* #131b2e */
+  --surface-container-high: 19 27 46; /* #131b2e */
+  --outline: 75 85 99; /* #4b5563 */
+  --outline-variant: 31 41 55; /* #1f2937 */
+  --primary-fixed-dim: 59 130 246; /* #3b82f6 */
+  --secondary-fixed-dim: 156 163 175; /* #9ca3af */
+  --on-secondary-fixed-variant: 156 163 175; /* #9ca3af */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: rgb(var(--background));
+  color: rgb(var(--on-background));
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+::selection {
+  background-color: rgb(var(--primary));
+  color: rgb(var(--on-primary));
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.dark .glass-card {
+  background: rgba(11, 19, 38, 0.7);
+}
+

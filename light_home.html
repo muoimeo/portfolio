@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bui Vu Nhat Minh - Portfolio</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#dee8ff",
+                        "on-secondary-container": "#54647a",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#263143",
+                        "on-primary-fixed": "#001a42",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#d8e2ff",
+                        "on-secondary-fixed": "#0b1c30",
+                        "on-secondary-fixed-variant": "#38485d",
+                        "on-tertiary-fixed": "#311400",
+                        "primary": "#0058be",
+                        "secondary-fixed-dim": "#b7c8e1",
+                        "on-primary-container": "#fefcff",
+                        "tertiary-fixed": "#ffdcc6",
+                        "primary-fixed-dim": "#adc6ff",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c2c6d6",
+                        "secondary-container": "#d0e1fb",
+                        "outline": "#727785",
+                        "on-tertiary-fixed-variant": "#723600",
+                        "surface": "#f9f9ff",
+                        "on-tertiary-container": "#fffbff",
+                        "on-surface-variant": "#424754",
+                        "surface-bright": "#f9f9ff",
+                        "surface-tint": "#005ac2",
+                        "surface-container-low": "#f0f3ff",
+                        "inverse-on-surface": "#ecf1ff",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#cfdaf2",
+                        "tertiary": "#924700",
+                        "tertiary-container": "#b75b00",
+                        "on-surface": "#111c2d",
+                        "background": "#f9f9ff",
+                        "on-background": "#111c2d",
+                        "surface-variant": "#d8e3fb",
+                        "surface-container-highest": "#d8e3fb",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#004395",
+                        "secondary": "#505f76",
+                        "primary-container": "#2170e4",
+                        "tertiary-fixed-dim": "#ffb786",
+                        "secondary-fixed": "#d3e4fe",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#adc6ff",
+                        "surface-container": "#e7eeff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "48px",
+                        "section-gap": "120px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="bg-surface/80 dark:bg-surface/80 backdrop-blur-md w-full top-0 sticky border-b border-outline-variant/30 dark:border-outline-variant/10 z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop h-20 max-w-container-max mx-auto z-50 md:px-margin-desktop px-margin-mobile">
+<div class="font-display text-headline-md font-bold text-primary dark:text-primary-fixed-dim">
+                Bui Vu Nhat Minh
+            </div>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 font-label-md text-label-md" href="#projects">Projects</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 font-label-md text-label-md" href="#research">Research</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 font-label-md text-label-md" href="#skills">Skills</a>
+<a class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim transition-colors duration-200 font-label-md text-label-md" href="#awards">Awards</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container transition-all hover:scale-105 active:opacity-80 active:scale-95 shadow-sm">
+                Resume
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-[80vh] flex items-center justify-center pt-20 pb-section-gap overflow-hidden bg-gradient-to-br from-surface to-surface-container-high/50" id="hero-section">
+<canvas class="absolute inset-0 z-0 w-full h-full opacity-60" id="network-canvas"></canvas>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center flex flex-col items-center">
+<h1 class="font-display text-display text-on-background mb-6 max-w-4xl tracking-tight">
+                Bui Vu Nhat Minh
+            </h1>
+<h2 class="font-headline-md text-headline-md text-primary mb-6">
+                AI-Focused Computer Science Student &amp; Researcher
+            </h2>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mb-10">
+                Building intelligent systems with analytical precision. Passionate about machine learning, data-driven optimization, and engineering robust software architectures for the future.
+            </p>
+<div class="flex gap-4">
+<a class="bg-primary text-on-primary px-8 py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-all hover:shadow-[0px_8px_30px_rgba(59,130,246,0.15)]" href="#projects">
+                    View Projects
+                </a>
+<a class="bg-transparent border border-outline text-secondary px-8 py-3 rounded-lg font-label-md text-label-md hover:border-primary hover:text-primary transition-colors" href="#contact">
+                    Contact Me
+                </a>
+</div>
+</div>
+</section>
+<main class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop flex flex-col gap-section-gap pb-section-gap">
+<!-- Projects Section -->
+<section id="projects">
+<div class="mb-12">
+<h2 class="font-headline-lg text-headline-lg md:font-headline-lg md:text-headline-lg text-on-background mb-4">Selected Projects</h2>
+<div class="flex gap-3 flex-wrap">
+<button class="px-4 py-2 rounded-full bg-primary/10 text-primary font-label-md text-label-md border border-primary/20">All</button>
+<button class="px-4 py-2 rounded-full bg-transparent text-secondary hover:bg-surface-variant hover:text-on-surface-variant transition-colors font-label-md text-label-md border border-outline-variant">AI/ML</button>
+<button class="px-4 py-2 rounded-full bg-transparent text-secondary hover:bg-surface-variant hover:text-on-surface-variant transition-colors font-label-md text-label-md border border-outline-variant">Web</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Project Card 1 -->
+<div class="group border border-outline-variant rounded-xl overflow-hidden bg-surface hover:shadow-[0px_8px_30px_rgba(59,130,246,0.08)] hover:border-primary transition-all duration-300 flex flex-col">
+<div class="h-48 bg-surface-variant relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-surface-variant"></div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-background mb-2 group-hover:text-primary transition-colors">DeepRL Navigation</h3>
+<p class="font-body-md text-body-md text-secondary mb-6 flex-1">Implemented a deep reinforcement learning agent capable of navigating complex simulated environments with dynamic obstacles.</p>
+<div class="flex gap-2 flex-wrap mt-auto">
+<span class="bg-surface-container-high text-primary px-3 py-1 rounded-full font-label-sm text-label-sm">Python</span>
+<span class="bg-surface-container-high text-primary px-3 py-1 rounded-full font-label-sm text-label-sm">PyTorch</span>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="group border border-outline-variant rounded-xl overflow-hidden bg-surface hover:shadow-[0px_8px_30px_rgba(59,130,246,0.08)] hover:border-primary transition-all duration-300 flex flex-col">
+<div class="h-48 bg-surface-variant relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-tertiary/20 to-surface-variant"></div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-background mb-2 group-hover:text-primary transition-colors">Full-stack Analytics</h3>
+<p class="font-body-md text-body-md text-secondary mb-6 flex-1">Developed a comprehensive dashboard for processing and visualizing large-scale user interaction data in real-time.</p>
+<div class="flex gap-2 flex-wrap mt-auto">
+<span class="bg-surface-container-high text-primary px-3 py-1 rounded-full font-label-sm text-label-sm">React</span>
+<span class="bg-surface-container-high text-primary px-3 py-1 rounded-full font-label-sm text-label-sm">Node.js</span>
+<span class="bg-surface-container-high text-primary px-3 py-1 rounded-full font-label-sm text-label-sm">AWS</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Skills -->
+<section class="bg-surface-container-low rounded-[2rem] p-8 md:p-12 border border-outline-variant/50" id="skills">
+<h2 class="font-headline-lg text-headline-lg md:font-headline-lg md:text-headline-lg text-on-background mb-10 text-center">Technical Skills</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-6 border-b border-outline-variant/30 pb-2">AI &amp; Machine Learning</h3>
+<div class="flex flex-wrap gap-3">
+<span class="bg-primary/10 text-primary px-4 py-2 rounded-full font-label-md text-label-md">PyTorch</span>
+<span class="bg-primary/10 text-primary px-4 py-2 rounded-full font-label-md text-label-md">TensorFlow</span>
+<span class="bg-primary/10 text-primary px-4 py-2 rounded-full font-label-md text-label-md">Scikit-learn</span>
+<span class="bg-primary/10 text-primary px-4 py-2 rounded-full font-label-md text-label-md">Computer Vision</span>
+<span class="bg-primary/10 text-primary px-4 py-2 rounded-full font-label-md text-label-md">NLP</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-6 border-b border-outline-variant/30 pb-2">Software Engineering</h3>
+<div class="flex flex-wrap gap-3">
+<span class="bg-primary/10 text-primary px-4 py-2 rounded-full font-label-md text-label-md">Python</span>
+<span class="bg-primary/10 text-primary px-4 py-2 rounded-full font-label-md text-label-md">C++</span>
+<span class="bg-primary/10 text-primary px-4 py-2 rounded-full font-label-md text-label-md">Java</span>
+<span class="bg-primary/10 text-primary px-4 py-2 rounded-full font-label-md text-label-md">JavaScript/TypeScript</span>
+<span class="bg-primary/10 text-primary px-4 py-2 rounded-full font-label-md text-label-md">React</span>
+</div>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-6 border-b border-outline-variant/30 pb-2">Tools &amp; Infrastructure</h3>
+<div class="flex flex-wrap gap-3">
+<span class="bg-primary/10 text-primary px-4 py-2 rounded-full font-label-md text-label-md">Git</span>
+<span class="bg-primary/10 text-primary px-4 py-2 rounded-full font-label-md text-label-md">Docker</span>
+<span class="bg-primary/10 text-primary px-4 py-2 rounded-full font-label-md text-label-md">AWS</span>
+<span class="bg-primary/10 text-primary px-4 py-2 rounded-full font-label-md text-label-md">Linux</span>
+<span class="bg-primary/10 text-primary px-4 py-2 rounded-full font-label-md text-label-md">SQL</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Research -->
+<section id="research">
+<h2 class="font-headline-lg text-headline-lg md:font-headline-lg md:text-headline-lg text-on-background mb-10">Analytical Research</h2>
+<div class="border border-outline-variant rounded-2xl p-8 bg-surface hover:shadow-[0px_4px_20px_rgba(30,41,59,0.05)] transition-shadow">
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<div class="flex-1">
+<h3 class="font-headline-md text-headline-md text-on-background mb-4">Optimizing Neural Network Inference on Edge Devices</h3>
+<p class="font-body-md text-body-md text-secondary mb-6">Investigated novel quantization and pruning techniques to deploy large language models on resource-constrained edge hardware without significant loss in performance. Co-authored a paper submitted to CVPR.</p>
+<a class="text-primary font-label-md text-label-md hover:underline inline-flex items-center gap-1" href="#">
+                            Read Paper <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="bg-surface-container-high rounded-xl p-6 flex flex-col items-center justify-center min-w-[200px] border border-primary/20">
+<span class="font-display text-[40px] text-primary font-bold leading-none mb-2">10x</span>
+<span class="font-label-md text-label-md text-secondary text-center">Speedup in Inference Time</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Awards -->
+<section id="awards">
+<h2 class="font-headline-lg text-headline-lg md:font-headline-lg md:text-headline-lg text-on-background mb-10">Awards &amp; Honors</h2>
+<div class="relative border-l-2 border-outline-variant ml-4 md:ml-0 md:pl-8 space-y-12">
+<div class="relative pl-6 md:pl-0">
+<div class="absolute -left-[31px] md:-left-[41px] top-1 w-4 h-4 rounded-full bg-primary ring-4 ring-surface"></div>
+<div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 mb-2">
+<h3 class="font-headline-md text-headline-md text-on-background">Outstanding Student Award</h3>
+<span class="font-label-md text-label-md text-secondary">2023 - 2024</span>
+</div>
+<p class="font-body-md text-body-md text-secondary max-w-2xl">Awarded to the top 1% of students in the Computer Science department for exceptional academic performance and research contributions.</p>
+</div>
+<div class="relative pl-6 md:pl-0">
+<div class="absolute -left-[31px] md:-left-[41px] top-1 w-4 h-4 rounded-full bg-primary ring-4 ring-surface"></div>
+<div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-6 mb-2">
+<h3 class="font-headline-md text-headline-md text-on-background">National AI Hackathon Winner</h3>
+<span class="font-label-md text-label-md text-secondary">Fall 2023</span>
+</div>
+<p class="font-body-md text-body-md text-secondary max-w-2xl">Led a team of four to develop an innovative accessibility tool using computer vision, winning 1st place among 50+ competing teams.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-on-background border-t border-outline-variant/30 dark:border-outline-variant/10 w-full mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center py-gutter px-margin-desktop w-full max-w-container-max mx-auto px-margin-mobile">
+<div class="font-body-md text-body-md text-on-secondary-fixed-variant dark:text-secondary-fixed-dim mb-4 md:mb-0">
+                © 2024 Bui Vu Nhat Minh. Built with Analytical Precision.
+            </div>
+<div class="flex gap-6">
+<a class="font-body-md text-body-md text-on-secondary-fixed-variant dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim underline underline-offset-4 transition-colors" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-secondary-fixed-variant dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim underline underline-offset-4 transition-colors" href="#">GitHub</a>
+<a class="font-body-md text-body-md text-on-secondary-fixed-variant dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed-dim underline underline-offset-4 transition-colors" href="#">Email</a>
+</div>
+</div>
+</footer>
+<script>
+    const canvas = document.getElementById('network-canvas');
+    const ctx = canvas.getContext('2d');
+    const heroSection = document.getElementById('hero-section');
+    
+    let width, height;
+    let particles = [];
+    const mouse = { x: null, y: null, radius: 150 };
+
+    function init() {
+        width = canvas.width = canvas.parentElement.offsetWidth;
+        height = canvas.height = canvas.parentElement.offsetHeight;
+        
+        particles = [];
+        const numParticles = (width * height) / 10000;
+        
+        for (let i = 0; i < numParticles; i++) {
+            particles.push(new Particle());
+        }
+    }
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * width;
+            this.y = Math.random() * height;
+            this.vx = (Math.random() - 0.5) * 0.5;
+            this.vy = (Math.random() - 0.5) * 0.5;
+            this.baseX = this.x;
+            this.baseY = this.y;
+            this.size = Math.random() * 1.5 + 0.5;
+        }
+
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+
+            if (this.x < 0 || this.x > width) this.vx *= -1;
+            if (this.y < 0 || this.y > height) this.vy *= -1;
+
+            if (mouse.x != null) {
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < mouse.radius) {
+                    const forceDirectionX = dx / distance;
+                    const forceDirectionY = dy / distance;
+                    const force = (mouse.radius - distance) / mouse.radius;
+                    const directionX = forceDirectionX * force * 1.5;
+                    const directionY = forceDirectionY * force * 1.5;
+                    
+                    this.x -= directionX;
+                    this.y -= directionY;
+                }
+            }
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(80, 95, 118, 0.6)'; // secondary color with opacity
+            ctx.fill();
+        }
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, width, height);
+        
+        for (let i = 0; i < particles.length; i++) {
+            particles[i].update();
+            particles[i].draw();
+            
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < 100) {
+                    ctx.beginPath();
+                    // slate/blue primary color for connecting lines
+                    ctx.strokeStyle = `rgba(0, 88, 190, ${(1 - distance/100) * 0.4})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.stroke();
+                }
+            }
+        }
+        requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', init);
+    
+    heroSection.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+    });
+    
+    heroSection.addEventListener('mouseleave', () => {
+        mouse.x = null;
+        mouse.y = null;
+    });
+
+    init();
+    animate();
+</script>
+</body></html>
