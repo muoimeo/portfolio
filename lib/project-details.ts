@@ -139,7 +139,7 @@ export const projectDetails: Record<Language, Record<ProjectSlug, ProjectDetail>
       demoImageAlt: "Kindy-Mate product demo screenshot",
       links: [
         { label: "Repository", href: "https://github.com/RinaniRita/KINDY-MATE.git" },
-        { label: "Presentation deck", href: "#deck-link-needed", disabled: true },
+        { label: "Presentation deck", href: "/projects/kindy-mate-ai-companion/slides/kindy-mate-slide.pdf" },
       ],
     },
     "rag-codebase-qa-pipeline": {
@@ -336,7 +336,7 @@ export const projectDetails: Record<Language, Record<ProjectSlug, ProjectDetail>
       demoImageAlt: "Ảnh demo sản phẩm Kindy-Mate",
       links: [
         { label: "Repository", href: "https://github.com/RinaniRita/KINDY-MATE.git" },
-        { label: "Slide thuy\u1ebft tr\u00ecnh", href: "#deck-link-needed", disabled: true },
+        { label: "Slide thuy\u1ebft tr\u00ecnh", href: "/projects/kindy-mate-ai-companion/slides/kindy-mate-slide.pdf" },
       ],
     },
     "rag-codebase-qa-pipeline": {

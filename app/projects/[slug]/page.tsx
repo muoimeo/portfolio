@@ -314,8 +314,10 @@ function LinkList({
 }) {
   return (
     <div className="flex flex-wrap gap-3">
-      {links.map((link) =>
-        link.disabled ? (
+      {links.map((link) => {
+        const opensInNewTab = link.href.startsWith("http") || link.href.endsWith(".pdf");
+
+        return link.disabled ? (
           <span
             key={link.label}
             className="inline-flex items-center gap-2 rounded-lg border border-outline-variant/30 px-4 py-2 font-label-md text-label-md text-secondary dark:border-gray-800 dark:text-gray-500"
@@ -327,15 +329,15 @@ function LinkList({
           <a
             key={link.label}
             href={link.href}
-            target={link.href.startsWith("http") ? "_blank" : undefined}
-            rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+            target={opensInNewTab ? "_blank" : undefined}
+            rel={opensInNewTab ? "noopener noreferrer" : undefined}
             className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 font-label-md text-label-md text-on-primary transition-transform hover:-translate-y-0.5"
           >
             {link.label}
             <ExternalLink className="h-4 w-4" />
           </a>
-        ),
-      )}
+        );
+      })}
     </div>
   );
 }
