@@ -6,6 +6,7 @@ export interface TranslationDict {
     skills: string;
     awards: string;
     resume: string;
+    resumeUrl: string;
   };
   hero: {
     name: string;
@@ -104,6 +105,7 @@ export const translations: Record<"en" | "vi", TranslationDict> = {
       skills: "Skills",
       awards: "Awards",
       resume: "Resume",
+      resumeUrl: "/cv_en.pdf",
     },
     hero: {
       name: "Bui Vu Nhat Minh",
@@ -293,6 +295,7 @@ export const translations: Record<"en" | "vi", TranslationDict> = {
       skills: "Kỹ năng",
       awards: "Giải thưởng",
       resume: "CV",
+      resumeUrl: "/cv_vi.pdf",
     },
     hero: {
       name: "Bùi Vũ Nhật Minh",

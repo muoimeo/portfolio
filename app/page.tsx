@@ -145,7 +145,7 @@ export default function Home() {
             <LanguageToggle />
             <ThemeToggle />
             <a
-              href="/resume.pdf"
+              href={dict.nav.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-lg bg-primary px-5 py-2 font-label-md text-label-md text-on-primary shadow-sm transition-all duration-200 hover:scale-105 hover:bg-primary/90 active:scale-95 active:opacity-80 dark:hover:bg-primary/80"
