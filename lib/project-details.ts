@@ -174,7 +174,7 @@ export const projectDetails: Record<Language, Record<ProjectSlug, ProjectDetail>
       demoImage: "/projects/rag-codebase-qa-pipeline/demo/cover.png",
       demoImageAlt: "RAG Codebase QA Pipeline demo screenshot",
       links: [
-        { label: "Project paper", href: "/rag_paper.pdf" },
+        { label: "Project report", href: "/rag_paper.pdf" },
         { label: "Repository", href: "https://github.com/muoimeo/evaluating-long-context-rag-and-recursive-reading-for-llm-repository-qa.git" },
       ],
     },
@@ -371,7 +371,7 @@ export const projectDetails: Record<Language, Record<ProjectSlug, ProjectDetail>
       demoImage: "/projects/rag-codebase-qa-pipeline/demo/cover.png",
       demoImageAlt: "Ảnh demo RAG Codebase QA Pipeline",
       links: [
-        { label: "Project paper", href: "/rag_paper.pdf" },
+        { label: "Báo cáo dự án", href: "/rag_paper.pdf" },
         { label: "Repository", href: "https://github.com/muoimeo/evaluating-long-context-rag-and-recursive-reading-for-llm-repository-qa.git" },
       ],
     },

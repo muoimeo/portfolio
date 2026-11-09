@@ -70,11 +70,16 @@ export interface TranslationDict {
   };
   research: {
     title: string;
-    paperTitle: string;
-    description: string;
-    readPaper: string;
-    statValue: string;
-    statLabel: string;
+    items: Array<{
+      title: string;
+      subtitle?: string;
+      description: string;
+      readLabel: string;
+      pdfUrl: string;
+      githubUrl?: string;
+      statValue: string;
+      statLabel: string;
+    }>;
   };
   awards: {
     title: string;
@@ -102,7 +107,7 @@ export const translations: Record<"en" | "vi", TranslationDict> = {
     },
     hero: {
       name: "Bui Vu Nhat Minh",
-      role: "Computer Science - Artificial Intelligence (AI) Student",
+      role: "Computer Science - Artificial Intelligence (AI) Graduate",
       summary: "Building intelligent systems with analytical precision. Passionate about machine learning, data-driven optimization, and engineering robust software architectures for the future.",
       viewProjects: "View Projects",
       contactMe: "Contact Me",
@@ -160,9 +165,19 @@ export const translations: Record<"en" | "vi", TranslationDict> = {
       internshipsTitle: "Internship Experience",
       internships: [
         {
+          role: "AI Research Intern (Remote) | Mobile Solutions Department",
+          company: "Viettel Networks (VTNet) - Technology Platform & Digital Transformation Center",
+          period: "July 2026 – October 2026",
+          details: [
+            "Built a reliability harness for LLM tool-calling agents, covering schema/domain validation, safe dispatch, bounded retries, deterministic repair, and controlled recovery.",
+            "Designed fault-injection experiments on τ²-bench to evaluate execution failures, WRITE-side-effect safety, retry behavior, and operational overhead across A0–A3.",
+            "Implemented output/postcondition validation and replay safeguards to prevent unsafe or duplicate execution of state-changing tool calls.",
+          ],
+        },
+        {
           role: "Research Intern (Full-time)",
           company: "Business AI Lab, National Economics University (NEU)",
-          period: "07/2025 - 01/2026",
+          period: "July 2025 - January 2026",
           details: [
             "Conducting research in Machine Learning (ML) with focus on model development and evaluation.",
             "Enhancing expertise in Python and data-driven analysis.",
@@ -183,9 +198,9 @@ export const translations: Record<"en" | "vi", TranslationDict> = {
       educationTitle: "Education",
       educationDegree: "BSc (Hons) Computer Science (Artificial Intelligence)",
       educationSchool: "University of the West of England, Phenikaa Campus",
-      educationPeriod: "Expected May 2026",
+      educationPeriod: "Graduated June 2026",
       educationDetails: [
-        "GPA (1st & 2nd year): 77.45/100 (Distinction range)",
+        "GPA: 77.45/100 (Distinction range)",
         "Dean's scholarship (50% tuition fees for 3 years)",
         "Coursework: AI, Machine Learning, Advanced Algorithms, Advanced Software Development, Computer Architecture",
       ],
@@ -212,21 +227,42 @@ export const translations: Record<"en" | "vi", TranslationDict> = {
       },
     },
     research: {
-      title: "Featured Research",
-      paperTitle: "Evaluating RAG and Iterative Reading for Large Codebase QA",
-      description: "Investigated QA evaluation pipelines comparing long-context prompting, standard RAG, and bounded iterative reading. Designed context-rot experiments showing iterative reading improved citation grounding over standard RAG.",
-      readPaper: "View Project's Paper",
-      statValue: "60+",
-      statLabel: "Benchmark QA Scenarios Evaluation",
+      title: "Featured Research & Technical Reports",
+      items: [
+        {
+          title: "Reliable Tool Execution Harness for LLM Agents",
+          subtitle: "Research Internship Report at Viettel Networks (VTNet) — on τ²-bench Retail",
+          description: "Engineered and evaluated a multi-tiered tool execution harness for LLM agents on τ²-bench v0.1.3: pre-dispatch schema/domain validation (A1), bounded provider retries (A2), and deterministic repair with WRITE postcondition quarantine (A3). Evaluated across 232 natural episodes and 70 controlled fault-injection scenarios, verifying 100% rejection dispatch prevention and zero duplicate WRITEs.",
+          readLabel: "View Technical Report",
+          pdfUrl: "/vtnet_report.pdf",
+          githubUrl: "https://github.com/muoimeo/tau2-tool-execution-harness",
+          statValue: "100%",
+          statLabel: "Safe Dispatch & Zero Duplicate WRITEs",
+        },
+        {
+          title: "Evaluating RAG and Iterative Reading for Large Codebase QA",
+          subtitle: "Technical Evaluation Report",
+          description: "Investigated QA evaluation pipelines comparing long-context prompting, standard RAG, and bounded iterative reading. Designed context-rot experiments showing iterative reading improved citation grounding over standard RAG.",
+          readLabel: "View Technical Report",
+          pdfUrl: "/rag_paper.pdf",
+          githubUrl: "https://github.com/muoimeo/evaluating-long-context-rag-and-recursive-reading-for-llm-repository-qa.git",
+          statValue: "60+",
+          statLabel: "Benchmark QA Scenarios Evaluated",
+        },
+      ],
     },
     awards: {
       title: "Awards & Honors",
       items: [
         {
-          title: "Participating, Green Intelligence Challenge 2026",
+          title: "Top 30 - MIS Talent 2026",
+          period: "National Economics University, Vietnam",
+          description: "Achieved Top 30 in the nationwide competition themed 'Designing AI Agents - Optimizing Business Operations'. Participated with the core role of designing and architecting the AI Agent system.",
+        },
+        {
+          title: "Participant - Green Intelligence Challenge 2026",
           period: "Phenikaa University, Vietnam",
-          description: "Participating as Team Leader, App Developer, and Research Assistant in the challenge hosted by the UK-Vietnam EmpowerTNE Network. Leading the development of the 'Kindy-Mate AI Companion' platform to promote healthy digital habits for kids.",
-          isLive: true,
+          description: "Participated as Team Leader, App Developer, and Research Assistant in the challenge hosted by the UK-Vietnam EmpowerTNE Network. Led the development of the 'Kindy-Mate AI Companion' platform to promote healthy digital habits for kids.",
         },
         {
           title: "1st Runner-up, Future Business Analyst Season 5",
@@ -260,7 +296,7 @@ export const translations: Record<"en" | "vi", TranslationDict> = {
     },
     hero: {
       name: "Bùi Vũ Nhật Minh",
-      role: "Sinh viên Khoa học Máy tính - Trí tuệ Nhân tạo (AI)",
+      role: "Cử nhân Khoa học Máy tính - Trí tuệ Nhân tạo (AI)",
       summary: "Xây dựng các hệ thống thông minh với độ chính xác phân tích. Đam mê học máy, tối ưu hóa dựa trên dữ liệu và thiết kế các kiến trúc phần mềm mạnh mẽ cho tương lai.",
       viewProjects: "Xem Dự Án",
       contactMe: "Liên Hệ",
@@ -318,9 +354,19 @@ export const translations: Record<"en" | "vi", TranslationDict> = {
       internshipsTitle: "Kinh nghiệm Thực tập",
       internships: [
         {
+          role: "Thực tập sinh Nghiên cứu AI (Remote) | Phòng Giải pháp Di động",
+          company: "Tổng Công ty Mạng lưới Viettel (Viettel Networks - VTNet) - Trung tâm Nền tảng Công nghệ và Chuyển đổi số",
+          period: "Tháng 7, 2026 – Tháng 10, 2026",
+          details: [
+            "Xây dựng harness layer thực thi tool đáng tin cậy cho LLM agent, gồm kiểm tra schema/nghiệp vụ, dispatch an toàn, retry có giới hạn, sửa lỗi tất định và phục hồi có kiểm soát.",
+            "Thiết kế fault injection trên τ²-bench để đánh giá A0–A3 dưới các lỗi provider, parsing, validation, WRITE và chi phí vận hành.",
+            "Triển khai kiểm tra output/postcondition và cơ chế bảo vệ side effect, ngăn replay không an toàn và thực thi trùng các tool làm thay đổi trạng thái.",
+          ],
+        },
+        {
           role: "Thực tập sinh Nghiên cứu (Toàn thời gian)",
           company: "Business AI Lab, Đại học Kinh tế Quốc dân (NEU)",
-          period: "07/2025 - 01/2026",
+          period: "Tháng 7, 2025 - Tháng 1, 2026",
           details: [
             "Tiến hành nghiên cứu về Học Máy (ML) tập trung vào phát triển và đánh giá mô hình.",
             "Nâng cao chuyên môn lập trình Python và kỹ năng phân tích định hướng dữ liệu.",
@@ -341,7 +387,7 @@ export const translations: Record<"en" | "vi", TranslationDict> = {
       educationTitle: "Học vấn",
       educationDegree: "Cử nhân (Danh dự) Khoa học Máy tính (Trí tuệ Nhân tạo)",
       educationSchool: "University of the West of England - Phenikaa Campus",
-      educationPeriod: "Dự kiến tốt nghiệp Tháng 5, 2026",
+      educationPeriod: "Tốt nghiệp Tháng 6, 2026",
       educationDetails: [
         "GPA (đã xác nhận): 77.45/100 (Phân loại Xuất sắc / Distinction)",
         "Học bổng Dean (50% học phí trong 3 năm)",
@@ -370,21 +416,42 @@ export const translations: Record<"en" | "vi", TranslationDict> = {
       },
     },
     research: {
-      title: "Nghiên Cứu Nổi bật",
-      paperTitle: "Đánh giá RAG và Đọc Lặp để Hỏi Đáp trên Kho mã nguồn lớn",
-      description: "Nghiên cứu các quy trình đánh giá QA so sánh giữa prompt ngữ cảnh dài, RAG tiêu chuẩn và đọc lặp có giới hạn. Thiết kế các thử nghiệm suy giảm ngữ cảnh chứng minh đọc lặp cải thiện độ chính xác trích dẫn so với RAG.",
-      readPaper: "Xem Bài báo của Dự án",
-      statValue: "60+",
-      statLabel: "Kịch bản Hỏi Đáp được Đánh giá",
+      title: "Nghiên Cứu & Báo Cáo Kỹ Thuật",
+      items: [
+        {
+          title: "Lớp Thực Thi Tool Đáng Tin Cậy Cho LLM Agent",
+          subtitle: "Báo cáo Thực tập Nghiên cứu tại Tổng Công ty Mạng lưới Viettel (VTNet) — trên τ²-bench Retail",
+          description: "Nghiên cứu và triển khai lớp harness thực thi công cụ đa tầng cho tác tử LLM trên τ²-bench v0.1.3: tiền kiểm tra schema/nghiệp vụ (A1), thử lại có giới hạn tại biên provider (A2), và sửa biểu diễn không suy diễn kèm cách ly hậu điều kiện WRITE (A3). Đánh giá qua 232 episode và 70 kịch bản fault injection, chứng minh ngăn chặn 100% dispatch lỗi và duplicate WRITE, đảm bảo an toàn vận hành và khả năng kiểm toán.",
+          readLabel: "Xem Báo cáo Nghiên cứu",
+          pdfUrl: "/vtnet_report.pdf",
+          githubUrl: "https://github.com/muoimeo/tau2-tool-execution-harness",
+          statValue: "100%",
+          statLabel: "Chặn Lỗi Thực Thi & Zero Duplicate WRITEs",
+        },
+        {
+          title: "Đánh giá RAG và Đọc Lặp để Hỏi Đáp trên Kho mã nguồn lớn",
+          subtitle: "Báo cáo Đánh giá Kỹ thuật",
+          description: "Nghiên cứu các quy trình đánh giá QA so sánh giữa prompt ngữ cảnh dài, RAG tiêu chuẩn và đọc lặp có giới hạn. Thiết kế các thử nghiệm suy giảm ngữ cảnh chứng minh đọc lặp cải thiện độ chính xác trích dẫn so với RAG.",
+          readLabel: "Xem Báo cáo Kỹ thuật",
+          pdfUrl: "/rag_paper.pdf",
+          githubUrl: "https://github.com/muoimeo/evaluating-long-context-rag-and-recursive-reading-for-llm-repository-qa.git",
+          statValue: "60+",
+          statLabel: "Kịch bản Hỏi Đáp được Đánh giá",
+        },
+      ],
     },
     awards: {
       title: "Giải Thưởng & Cuộc Thi",
       items: [
         {
-          title: "Đang tham gia, Green Intelligence Challenge 2026",
+          title: "Top 30 - MIS Talent 2026",
+          period: "Đại học Kinh tế Quốc dân, Việt Nam",
+          description: "Đạt Top 30 cuộc thi quy mô toàn quốc với chủ đề 'Thiết kế tác nhân AI - Tối ưu vận hành doanh nghiệp'. Tham gia với vai trò thiết kế kiến trúc và phát triển hệ thống AI Agent.",
+        },
+        {
+          title: "Tham gia - Green Intelligence Challenge 2026",
           period: "Đại học Phenikaa, Việt Nam",
           description: "Tham gia với vai trò Trưởng nhóm, Lập trình viên ứng dụng và Trợ lý nghiên cứu trong cuộc thi do Mạng lưới UK-Vietnam EmpowerTNE Network tổ chức. Dẫn dắt phát triển hệ thống đồng hành AI 'Kindy-Mate' nhằm hỗ trợ hình thành thói quen số lành mạnh cho trẻ em.",
-          isLive: true,
         },
         {
           title: "Á quân - Future Business Analyst Season 5",

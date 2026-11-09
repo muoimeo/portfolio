@@ -540,34 +540,57 @@ export default function Home() {
           <h2 className="mb-10 font-headline-lg text-headline-lg text-on-background">
             {dict.research.title}
           </h2>
-          <div className="rounded-2xl border border-outline-variant/30 bg-surface p-8 transition-shadow duration-300 hover:shadow-[0px_4px_20px_rgba(30,41,59,0.05)] dark:border-gray-800 dark:hover:shadow-[0px_4px_20px_rgba(0,0,0,0.5)]">
-            <div className="flex flex-col gap-8 md:flex-row md:items-start">
-              <div className="flex-1">
-                <h3 className="mb-4 font-headline-md text-headline-md text-on-background">
-                  {dict.research.paperTitle}
-                </h3>
-                <p className="mb-6 font-body-md text-body-md text-secondary dark:text-gray-400">
-                  {dict.research.description}
-                </p>
-                <a
-                  href="/rag_paper.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 font-label-md text-label-md text-primary transition-all duration-200 hover:underline dark:text-primary-fixed-dim"
-                >
-                  {dict.research.readPaper}{" "}
-                  <ArrowRight className="h-4 w-4" />
-                </a>
+          <div className="space-y-8">
+            {dict.research.items.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-2xl border border-outline-variant/30 bg-surface p-8 transition-shadow duration-300 hover:shadow-[0px_4px_20px_rgba(30,41,59,0.05)] dark:border-gray-800 dark:hover:shadow-[0px_4px_20px_rgba(0,0,0,0.5)]"
+              >
+                <div className="flex flex-col gap-8 md:flex-row md:items-start">
+                  <div className="flex-1">
+                    <h3 className="mb-2 font-headline-md text-headline-md text-on-background">
+                      {item.title}
+                    </h3>
+                    {item.subtitle && (
+                      <p className="mb-4 text-sm font-semibold text-primary dark:text-primary-fixed-dim">
+                        {item.subtitle}
+                      </p>
+                    )}
+                    <p className="mb-6 font-body-md text-body-md text-secondary dark:text-gray-400">
+                      {item.description}
+                    </p>
+                    <div className="flex flex-wrap items-center gap-6">
+                      <a
+                        href={item.pdfUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 font-label-md text-label-md text-primary transition-all duration-200 hover:underline dark:text-primary-fixed-dim"
+                      >
+                        {item.readLabel} <ArrowRight className="h-4 w-4" />
+                      </a>
+                      {item.githubUrl && (
+                        <a
+                          href={item.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 font-label-md text-label-md text-secondary transition-all duration-200 hover:text-primary hover:underline dark:text-gray-400 dark:hover:text-primary-fixed-dim"
+                        >
+                          GitHub Repository <ArrowRight className="h-4 w-4" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <div className="flex min-w-[200px] flex-col items-center justify-center rounded-xl border border-primary/20 bg-surface-container-high p-6 dark:border-primary/30 dark:bg-surface-container-low">
+                    <span className="mb-2 font-display text-[40px] font-bold leading-none text-primary dark:text-primary-fixed-dim">
+                      {item.statValue}
+                    </span>
+                    <span className="text-center font-label-md text-label-md text-secondary dark:text-gray-400">
+                      {item.statLabel}
+                    </span>
+                  </div>
+                </div>
               </div>
-              <div className="flex min-w-[200px] flex-col items-center justify-center rounded-xl border border-primary/20 bg-surface-container-high p-6 dark:border-primary/30 dark:bg-surface-container-low">
-                <span className="mb-2 font-display text-[40px] font-bold leading-none text-primary dark:text-primary-fixed-dim">
-                  {dict.research.statValue}
-                </span>
-                <span className="text-center font-label-md text-label-md text-secondary dark:text-gray-400">
-                  {dict.research.statLabel}
-                </span>
-              </div>
-            </div>
+            ))}
           </div>
         </motion.section>
 
